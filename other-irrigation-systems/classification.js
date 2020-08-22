@@ -1,14 +1,19 @@
-var api = require('users/username/repository:utils/api.js');
-var blardLib = require("users/username/repository:utils/blard.js");
-var cloudLib = require("users/username/repository:utils/cloud.js");
+// set the path to the api.js script you copied to your GEE account:
+var api = require('users/your_username/repository_name:utils/api.js');
+
+// set the path to the normalization.js script you copied to your GEE account:
+var normalization = require("users/your_username/repository_name:utils/normalization.js");
 
 // ****************** SETTINGS ********************
 
+// set the year you want to classify:
 var year = 2019;
 var startDate = "" + year + "-01-01";
 var endDate = "" + (year + 1) + "-01-01";
 var cloudCover = 90;
-var outputAsset = 'users/username/MABIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/RAW';
+
+// set the output path for the classification results:
+var outputAsset = 'users/your_username/MABIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/RAW';
 
 // Region of interest
 var brazilianMunicipalitiesPath = "users/agrosatelite_mapbiomas/COLECAO_5/PUBLIC/GRIDS/SEMIARID";
@@ -25,7 +30,8 @@ var climateCollection = ee.ImageCollection("IDAHO_EPSCOR/TERRACLIMATE");
 
 // ****************** SAMPLES DATA ********************
 
-var samplesAssetDir = 'users/username/MAPBIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/SAMPLES';
+// set path to the previously collected samples:
+var samplesAssetDir = 'users/your_username/MAPBIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/SAMPLES';
 
 var fullTrainingSamples = ee.FeatureCollection([]);
 ee.data.listAssets(samplesAsset)
@@ -72,7 +78,7 @@ Map.onClick(function(coordinates){
     var trainingSamples = fullTrainingSamples.filterBounds(roi);
     Map.addLayer(trainingSamples, {}, "trainingSamples", false);
 
-    var landsatCollection = ee.ImageCollection(blardLib.get16DayproductByROI(roi, startDate, endDate, cloudCover,
+    var landsatCollection = ee.ImageCollection(normalization.get16DayproductByROI(roi, startDate, endDate, cloudCover,
       ["GREEN", "RED", "NIR", "SWIR1", "SWIR2", "TIR1"]))
       .map(function(image){
         return image.updateMask(image.select("QF").eq(1));

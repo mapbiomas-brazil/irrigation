@@ -1,6 +1,10 @@
-var input = 'users/username/MAPBIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/RAW'
-var output = 'users/username/MAPBIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/SPATIAL_TEMPORAL_FILTERED'
+// set the path to the raw classification result:
+var input = 'users/your_username/MAPBIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/RAW'
 
+// set the path for the filtered result
+var output = 'users/your_username/MAPBIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/SPATIAL_TEMPORAL_FILTERED'
+
+// set the years interval you want to filter:
 var startYear = 2012;
 var endYear = 2016;
 
@@ -11,7 +15,7 @@ var years = range(startYear, endYear - startYear + 1);
 var offset = 2;
 var global_threshold = 3;
 
-var outputAsset = 'users/username/MABIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/RAW';
+var outputAsset = 'users/your_username/MABIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/RAW';
 
 var imageCollection = ee.List.sequence(startYear, endYear)
   .map(function(year) {
