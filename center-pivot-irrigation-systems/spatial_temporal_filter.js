@@ -1,10 +1,10 @@
 // Raw collection of the center pivot irrigation systems classification
 // Each image must be a binary raster with 0 (background) and 1 (pivots)
 // and contain the year property as an integer
-var input = 'users/username/MAPBIOMAS/C5/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS/RAW';
+var input = 'users/your_username/MAPBIOMAS/C5/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS/RAW';
 
 // export results
-var output = 'users/username/MAPBIOMAS/C5/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS/TEMPORAL_SPATIAL_FILTERED';
+var output = 'users/your_username/MAPBIOMAS/C5/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS/TEMPORAL_SPATIAL_FILTERED';
 
 // Temporal filter
 var window_size = 5;

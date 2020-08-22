@@ -9,11 +9,11 @@ Developed by ***Agrosatélite Geotecnologia Aplicada Ltda.***
 
 This folder contains the scripts to classify and post-process the **center pivot irrigation systems** subclass.
 
-We recommend that you read the Irrigation Appendix (**https://mapbiomas.org/download-dos-atbds**) of the Algorithm Theoretical Basis Document (**ATBD**), since important informations about the classification methodology can be found in there.
+We recommend that you read the [Irrigation Appendix of the Algorithm Theoretical Basis Document (ATBD)](https://mapbiomas.org/download-dos-atbds) of the Algorithm Theoretical Basis Document (**ATBD**), since important informations about the classification methodology can be found in there.
 
 ## How to use
 
-First, you need to copy the scripts in this folder to your Google Earth Engine (**GEE**) account.
+First, you need to copy the scripts (javascript only) in this folder to your Google Earth Engine (**GEE**) account.
 
 Then, in your **GEE** account, go to the **Assets tab** and create the following directory structure:
 
@@ -25,7 +25,7 @@ and create one Image Collections:
 
 ## Classification
 
-Open the script **center-pivot-irrigation-systems/semantic_segmentation.ipynb** in Google Colab.
+Open the script **center-pivot-irrigation-systems/semantic_segmentation.ipynb** in Google Colab and follow the instructions there.
 
 ## Post-processing
 
