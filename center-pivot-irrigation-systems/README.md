@@ -19,7 +19,7 @@ Then, in your **GEE** account, go to the **Assets tab** and create the following
 
  - MAPBIOMAS/C5/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS
 
-and create one Image Collections:
+and create one **Image Collections**:
 
  - MAPBIOMAS/C5/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS/**RAW**
 
