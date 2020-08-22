@@ -30,9 +30,9 @@ To run the classification, follow these steps:
 
 1. Open the script **irrigation/other-irrigation-systems/classification.js**;
 
-2. On **line 2** (variable `api`), set the path to the [api.js](./utils/api.js) script you copied to your GEE account;
+2. On **line 2** (variable `api`), set the path to the [api.js](../utils/api.js) script you copied to your GEE account;
 
-3. On **line 5** (variable `normalization`), set the path to the [normalization.js](./utils/normalization.js) script you copied to your GEE account;
+3. On **line 5** (variable `normalization`), set the path to the [normalization.js](../utils/normalization.js) script you copied to your GEE account;
 
 5. On **line 10** (variable `YEAR`), set the year you want to classify;
 
