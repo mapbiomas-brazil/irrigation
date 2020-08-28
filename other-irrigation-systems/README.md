@@ -34,7 +34,7 @@ To run the classification, follow these steps:
 
 3. On **line 5** (variable `normalization`), set the path to the [normalization.js](../utils/normalization.js) script you copied to your GEE account;
 
-5. On **line 10** (variable `YEAR`), set the year you want to classify;
+5. On **line 10** (variable `year`), set the year you want to classify;
 
 6. On **line 16** (variable `outputAsset`), set the output path to the classification results;
 
@@ -52,7 +52,7 @@ To run the classification, follow these steps:
 
 To run the post-processing, follow these steps:
 
-1. Open the script **irrigation/other-irrigation-systems/temporal_spatial_filter.js**;
+1. Open the script **irrigation/other-irrigation-systems/spatial_temporal_filter.js**;
 
 2. On **line 2** (variable `input`), set the path to the raw classification result;
 
