@@ -16,7 +16,7 @@ var bandNames = ee.Dictionary({
 
 function padronizeBandNames(image){
   var oldBandNames = bandNames.get(image.get('SPACECRAFT_ID'));
-  var newBandNames = ['BLUE', 'GREEN', 'RED', 'NIR', 'SWIR1', 'SWIR2', 'QA'];
+  var newBandNames = ['BLUE', 'GREEN', 'RED', 'NIR', 'SWIR1', 'SWIR2', 'BQA'];
   return image.select(oldBandNames, newBandNames);
 }
 
@@ -55,11 +55,21 @@ function getQABits(image, start, end) {
 }
 
 function maskClouds(image){
-  var qaBits = ee.List(qaBitsDict.get(image.get('SPACECRAFT_ID')));
-  var bqa = image.select('QA');
+  var qaBits = ee.List(qaBitsDict.get(image.getString('SPACECRAFT_ID')));
+  var bqa = image.select('BQA');
 
-  var cloudMask = ee.Image(qaBits.iterate(function(bits, mask){
+
+  var inital_state = ee.Dictionary({
+    'bqa': bqa,
+    'mask': ee.Image(1)
+  });
+
+  var finalState = ee.Dictionary(qaBits.iterate(function(bits, state){
     bits = ee.List(bits);
+    state = ee.Dictionary(state);
+
+    var bqa = ee.Image(state.get('bqa'));
+    var mask = ee.Image(state.get('mask'));
 
     var start = bits.getNumber(0);
     var end = bits.getNumber(1);
@@ -67,8 +77,14 @@ function maskClouds(image){
 
     var blueprint = getQABits(bqa, start, end).eq(desired);
 
-    return ee.Image(mask).updateMask(blueprint);
-  }, ee.Image(1)));
+    return ee.Dictionary({
+        'bqa': bqa,
+        'mask': mask.updateMask(blueprint)
+    });
+
+  }, inital_state));
+
+  var cloudMask = ee.Image(finalState.get('mask'));
 
   return image.updateMask(cloudMask);
 }
@@ -82,7 +98,7 @@ var windowSize = ui.Slider(30000, 100000, 30000);
 
 var panel = ui.Panel({
   widgets: [
-    ui.Label("INSTRUCTION:"),
+    ui.Label("Instructions:"),
     ui.Panel({
       widgets: [ui.Label("Start date:"), startDate],
       layout: ui.Panel.Layout.flow('horizontal'),
@@ -105,7 +121,7 @@ var panel = ui.Panel({
     'position': 'top-left',
     'width': '300px'
   }
-})
+});
 
 Map.add(panel);
 
@@ -131,7 +147,7 @@ Map.onClick(function(coordinates){
 
   Map.addLayer(ee.FeatureCollection([ee.Feature(roi)]).style({'color': 'red', 'fillColor': '00000000'}), {}, "ROI");
 
-  var l5Collection = ee.ImageCollection(filterLandsatCollection("LANDSAT/LT05/C01/T1_TOA", roi, "2000-01-01", "2011-10-01", cloudCoverValue))
+  var l5Collection = ee.ImageCollection(filterLandsatCollection("LANDSAT/LT05/C01/T1_TOA", roi, "2000-01-01", "2011-10-01", cloudCoverValue));
   var l7Collection1 = ee.ImageCollection(filterLandsatCollection("LANDSAT/LE07/C01/T1_TOA", roi, "2000-01-01", "2003-05-31", cloudCoverValue));
   var l7Collection2 = ee.ImageCollection(filterLandsatCollection("LANDSAT/LE07/C01/T1_TOA", roi, "2011-10-01", "2013-03-01", cloudCoverValue));
   var l8Collection = ee.ImageCollection(filterLandsatCollection("LANDSAT/LC08/C01/T1_TOA", roi, "2013-03-01", "2020-01-01", cloudCoverValue));
@@ -164,7 +180,7 @@ Map.onClick(function(coordinates){
 
   mosaic = mosaic.addBands(normalizedMosaicStdDev, null, true);
 
-  var filename = startDateValue + "_" + endDateValue + "_mosaic";
+  var filename = startDateValue + "_" + endDateValue + "_" + new Date().getTime() + "_mosaic";
 
   var mask = ee.Image(1).clip(roi);
 
@@ -173,7 +189,7 @@ Map.onClick(function(coordinates){
   var finalMosaic = mosaic
     .select("NDVI_p75", "NDVI_p100","NDVI_stdDev")
     .multiply(255)
-    .byte()
+    .byte();
 
   if(downloadImagePanel !== null){
     Map.remove(downloadImagePanel);
@@ -207,7 +223,9 @@ Map.onClick(function(coordinates){
       })
     ],
     layout: ui.Panel.Layout.flow('horizontal')
-  })
+  });
 
   Map.add(downloadImagePanel);
 });
+
+Map.setOptions('satellite');
