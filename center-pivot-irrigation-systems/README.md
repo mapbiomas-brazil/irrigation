@@ -25,13 +25,13 @@ and create one **Image Collections**:
 
 ## Classification
 
-Open the script **center-pivot-irrigation-systems/semantic_segmentation.ipynb** in Google Colab and follow the instructions there.
+Open the script [center-pivot-irrigation-systems/semantic_segmentation.ipynb](https://colab.research.google.com/github/mapbiomas-brazil/irrigation/blob/mapbiomas50/center-pivot-irrigation-systems/semantic_segmentation.ipynb) in Google Colab and follow the instructions there.
 
 ## Post-processing
 
 To run the post-processing, follow these steps:
 
-1. Open the script **center-pivot-irrigation-systems/spatial_temporal_filter.js**;
+1. Open the script (**[center-pivot-irrigation-systems/spatial_temporal_filter.js**]);
 
 2. On **line 4** (variable `input`), set the path to the raw classification result;
 
