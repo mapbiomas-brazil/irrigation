@@ -20,8 +20,8 @@ Open the script save_mosaic_to_classify.js (or https://code.earthengine.google.c
 #### To train your own Neural Network
 
 1. Open the script https://colab.research.google.com/drive/1C-ut9LLjuYH0hVXgvJK0kdD_i69AIpkJ?usp=sharing and save the mosaics and labels;
-2. 
-3. Open and run the script: https://colab.research.google.com/drive/194eOqVKdq8gtAoVA2iFdtBEn5QRMWRVx?usp=sharing.
+
+2. Open and run the script: https://colab.research.google.com/drive/194eOqVKdq8gtAoVA2iFdtBEn5QRMWRVx?usp=sharing.
 
 
 ### Post-processing
