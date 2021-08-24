@@ -11,39 +11,18 @@ This folder contains the scripts to classify and post-process the **irrigated ri
 
 We recommend that you read the [Irrigation Appendix of the Algorithm Theoretical Basis Document (ATBD)](https://mapbiomas.org/download-dos-atbds), since important informations about the classification methodology can be found in there.
 
-## How to use
+### How to use
 
-First, you need to copy the scripts in this folder to your Google Earth Engine (**GEE**) account.
+#### To classify using the MapBiomas Neural Network treined
 
-Then, in your **GEE** account, go to the **Assets tab** and create the following directory structure:
+Open the script save_mosaic_to_classify.js (or https://code.earthengine.google.com/797aa36ede2caf55a72f0bdc42dc4f35) and chose the state to classify and the year. After, click on the grid to save the mosaic to classify. Then, open the colab script:  https://colab.research.google.com/drive/1HFGCsVNk7-ADuXuv_tUrYRll58f5qPX4?usp=sharing
 
- - /MAPBIOMAS/C6/AGRICULTURE/RICE/RESULTS/RAW
- - MAPBIOMAS/C6/AGRICULTURE/RICE/RESULTS/TEMPORAL_FILTERED
+#### To train your own Neural Network
 
+1. Open the script https://colab.research.google.com/drive/1C-ut9LLjuYH0hVXgvJK0kdD_i69AIpkJ?usp=sharing and save the mosaics and labels;
+2. 
+3. Open and run the script: https://colab.research.google.com/drive/194eOqVKdq8gtAoVA2iFdtBEn5QRMWRVx?usp=sharing.
 
-### Classification
-
-To run the classification, follow these steps:
-
-1. Open the script **irrigation/other-irrigation-systems/classification.js**;
-
-2. On **line 2** (variable `api`), set the path to the [api.js](../utils/api.js) script you copied to your GEE account;
-
-3. On **line 5** (variable `normalization`), set the path to the [normalization.js](../utils/normalization.js) script you copied to your GEE account;
-
-5. On **line 10** (variable `year`), set the year you want to classify;
-
-6. On **line 16** (variable `outputAsset`), set the output path to the classification results;
-
-7. On **line 34** (variable `samplesAssetDir`), set path to the previously collected samples;
-
-8. Run the scripts;
-
-9. On the map, move to the northeast region of Brazil, and click in on of the highlighted cities;
-
-10. On the **Task tab** (right panel), run the classification task;
-
-11. Repeat the steps **9 and 10** if you want to classify another city.
 
 ### Post-processing
 
@@ -51,7 +30,7 @@ To run the post-processing, follow these steps:
 
 1. Open the script **irrigation/Irrigated-rice/post_processing.js **;
 
-2. On **line 10** (variable `input`), set the path to the raw classification result;
+2. On **line 10** (variable `input`), set the path to the ImageCollection raw classification result;
 
 3. On **line 13** (variable `output`, set the path to the filtered result;
 
