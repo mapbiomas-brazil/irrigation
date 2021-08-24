@@ -21,4 +21,4 @@ You can follow the instructions for each subclass in the links bellow.
 
  - [Center Pivot Irrigation System](./center-pivot-irrigation-systems) instructions;
  - [Other Irrigation System](./other-irrigation-systems) instructions;
- - [Irrigated Rice (./irrigated-rice) instructions]
+ - [Irrigated Rice](./irrigated-rice) instructions]
