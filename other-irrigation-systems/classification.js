@@ -13,7 +13,7 @@ var endDate = "" + (year + 1) + "-01-01";
 var cloudCover = 90;
 
 // set the output path for the classification results:
-var outputAsset = 'users/your_username/MABIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/RAW';
+var outputAsset = 'users/your_username/MABIOMAS/C6/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/RAW';
 
 // Region of interest
 var brazilianMunicipalitiesPath = "users/agrosatelite_mapbiomas/COLECAO_5/PUBLIC/GRIDS/SEMIARID";
@@ -31,15 +31,15 @@ var climateCollection = ee.ImageCollection("IDAHO_EPSCOR/TERRACLIMATE");
 // ****************** SAMPLES DATA ********************
 
 // set path to the previously collected samples:
-var samplesAssetDir = 'users/your_username/MAPBIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/SAMPLES';
+var samplesAssetDir = 'users/your_username/MAPBIOMAS/C6/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/SAMPLES';
 
 var fullTrainingSamples = ee.FeatureCollection([]);
 ee.data.listAssets(samplesAsset)
   .assets
-  .forEach(function(samplePath){
+  .forEach(function (samplePath) {
     var s = ee.FeatureCollection(samplePath.id);
     fullTrainingSamples = fullTrainingSamples.merge(s);
-});
+  });
 
 // ****************** END ANCILLARY DATA ********************
 
@@ -50,7 +50,7 @@ var municipiosExtra = ee.List(['2926004', '2930204', '2930204', '2608750', '2609
 var municipios = ee.FeatureCollection(brazilianMunicipalitiesPath)
   .filter(ee.Filter.or(ee.Filter.greaterThan(irrigatedAreaDefaultField, 5000), ee.Filter.inList(geoCodeField, municipiosExtra)));
 
-Map.addLayer(municipios.style({color: '#ff0000', fillColor: '#ffffff00'}), {}, "municipios");
+Map.addLayer(municipios.style({ color: '#ff0000', fillColor: '#ffffff00' }), {}, "municipios");
 
 Map.addLayer(fullTrainingSamples, {}, "Samples", false);
 
@@ -58,17 +58,17 @@ Map.addLayer(fullTrainingSamples, {}, "Samples", false);
 
 var clicked = false;
 
-Map.onClick(function(coordinates){
+Map.onClick(function (coordinates) {
   var point = ee.Geometry.Point([coordinates.lon, coordinates.lat]);
   var feature = ee.Feature(municipios.filterBounds(point).first());
 
   var loaded = false;
-  feature.evaluate(function(data){
-    if(loaded === false){
+  feature.evaluate(function (data) {
+    if (loaded === false) {
       loaded = true;
-    }else{
+    } else {
       return;
-  };
+    };
 
     print("Data:", data);
 
@@ -80,7 +80,7 @@ Map.onClick(function(coordinates){
 
     var landsatCollection = ee.ImageCollection(normalization.get16DayproductByROI(roi, startDate, endDate, cloudCover,
       ["GREEN", "RED", "NIR", "SWIR1", "SWIR2", "TIR1"]))
-      .map(function(image){
+      .map(function (image) {
         return image.updateMask(image.select("QF").eq(1));
       });
 
@@ -106,7 +106,7 @@ Map.onClick(function(coordinates){
       .addBands(annualHydricDeficit)
       .unmask(null);
 
-    Map.addLayer(mosaic, {bands: ["NIR_qmo", "SWIR1_qmo", "RED_qmo"], min: 0, max: 5000}, "Mosaic", false);
+    Map.addLayer(mosaic, { bands: ["NIR_qmo", "SWIR1_qmo", "RED_qmo"], min: 0, max: 5000 }, "Mosaic", false);
 
 
     print("Class  0:", trainingSamples.filterMetadata("class", "equals", 0).size());
@@ -122,10 +122,10 @@ Map.onClick(function(coordinates){
       })
 
     var classified = mosaic.classify(classfier)
-		.set('year', year);
+      .set('year', year);
 
     var filename = 'irrigated_crops_' + geoCode + '_' + year;
-    Map.addLayer(classified.selfMask(), {min: 0, max: 2, palette: ['black', 'red', 'blue']}, filename, false);
+    Map.addLayer(classified.selfMask(), { min: 0, max: 2, palette: ['black', 'red', 'blue'] }, filename, false);
 
     Export.image.toAsset({
       image: classified.selfMask().byte(),

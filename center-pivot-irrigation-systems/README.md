@@ -17,11 +17,11 @@ First, you need to copy the scripts (javascript only) in this folder to your Goo
 
 Then, in your **GEE** account, go to the **Assets tab** and create the following directory structure:
 
- - MAPBIOMAS/C5/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS
+ - MAPBIOMAS/C6/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS
 
 and create one **Image Collections**:
 
- - MAPBIOMAS/C5/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS/**RAW**
+ - MAPBIOMAS/C6/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS/**RAW**
 
 ## Classification
 
@@ -35,6 +35,6 @@ To run the post-processing, follow these steps:
 
 2. On **line 4** (variable `input`), set the path to the raw classification result;
 
-3. On **line 7** (variable `output`, set the path for the filtered result;
+3. On **line 7** (variable `output`), set the path for the filtered result;
 
 4. Run the script.

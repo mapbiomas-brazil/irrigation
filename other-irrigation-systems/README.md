@@ -17,12 +17,12 @@ First, you need to copy the scripts in this folder to your Google Earth Engine (
 
 Then, in your **GEE** account, go to the **Assets tab** and create the following directory structure:
 
- - MAPBIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS
- - MAPBIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/SAMPLES
+ - MAPBIOMAS/C6/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS
+ - MAPBIOMAS/C6/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/SAMPLES
 
 and create one **Image Collections**:
 
- - MAPBIOMAS/C5/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/**RAW**
+ - MAPBIOMAS/C6/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/**RAW**
 
 ### Classification
 
