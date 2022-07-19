@@ -1,5 +1,5 @@
 <div>
-    <img src='https://agrosatelite.com.br/wp-content/uploads/2019/02/logo_horizontal_negativo.png' height='auto' width='200' align='right'>
+    <img src='../assets/logo.png' align='right'>
     <h1>Center Pivot Irrigation Dynamics</h1>
 </div>
 
