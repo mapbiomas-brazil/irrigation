@@ -1,0 +1,16 @@
+{
+    "info":
+    {
+        "description": "Pivo dataset",
+        "version": "1",
+        "url": "no-url/datasets.com",
+        "year": 2022,
+        "contributor": "Agrosatelite",
+        "date_created": "22/01/2022"
+    },
+    "license":{
+        "url":"no-url/licenses.com",
+        "id": 0,
+        "name": "pivot_testing"
+    }
+}
