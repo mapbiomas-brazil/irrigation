@@ -22,7 +22,7 @@ We recommend that you read the [Irrigation Appendix of the Algorithm Theoretical
 
 #### Using the already trained MapBiomas Neural Network:
 
-1. Run the Google *[Earth Engine script](https://code.earthengine.google.com/?scriptPath=users%2Fagrosatelite_mapbiomas%2Fmapbiomas_tutorial%3Acollection7%2Firrigation%2Fpivot_dynamics%2F04_save_predict_mosaics.js)* to save Landsat mosaic to pretict 
+1. Run the *[Google Earth Engine script](https://code.earthengine.google.com/?scriptPath=users%2Fagrosatelite_mapbiomas%2Fmapbiomas_tutorial%3Acollection7%2Firrigation%2Fpivot_dynamics%2F04_save_predict_mosaics.js)* to save Landsat mosaic to pretict 
 
 2. Run the [Colab Notebook](https://github.com/mapbiomas-brazil/irrigation/blob/mapbiomas70/pivot-dynamics/Instance_segmentation_pivot/Predict/2_Run_predict_trained_model.ipynb)
 
