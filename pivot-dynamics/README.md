@@ -31,8 +31,8 @@ To train your own model, you have to follow the steps presented in figure bellow
 <img src='../assets/pivot_instance_segmentation.png' align='center'>
 
 1. To train your own model, first you have to save the train and test datasets. Follow the steps below:
-    1.1 Run the [GEE script](https://code.earthengine.google.com/?scriptPath=users%2Fagrosatelite_mapbiomas%2Fmapbiomas_tutorial%3Acollection7%2Firrigation%2Fpivot_dynamics%2F01_export_training_samples.js) and save tree files per tile: mosaic.tif, labels.tif and mosaic.csv files. Save these files in a Google Drive folder.
-    1.2 Run the [Notebook Colab](https://code.earthengine.google.com/?scriptPath=users%2Fagrosatelite_mapbiomas%2Fmapbiomas_tutorial%3Acollection7%2Firrigation%2Fpivot_dynamics%2F01_export_training_samples.js)  to convert the exported GEE files to Cocofile format.
+    1. Run the [GEE script](https://code.earthengine.google.com/?scriptPath=users%2Fagrosatelite_mapbiomas%2Fmapbiomas_tutorial%3Acollection7%2Firrigation%2Fpivot_dynamics%2F01_export_training_samples.js) and save tree files per tile: mosaic.tif, labels.tif and mosaic.csv files. Save these files in a Google Drive folder;
+    2. Run the [Notebook Colab](https://code.earthengine.google.com/?scriptPath=users%2Fagrosatelite_mapbiomas%2Fmapbiomas_tutorial%3Acollection7%2Firrigation%2Fpivot_dynamics%2F01_export_training_samples.js)  to convert the exported GEE files to Cocofile format.
 
 
 2. The next step is to train de instance segmentation model, using Pythorch and Detectron2 library, running [This Colab Notebook](https://github.com/mapbiomas-brazil/irrigation/blob/mapbiomas70/pivot-dynamics/Instance_segmentation_pivot/Train_model/3_Train_model.ipynb)
