@@ -24,7 +24,7 @@ We recommend that you read the [Irrigation Appendix of the Algorithm Theoretical
 
 1. Run the *[Google Earth Engine script](https://code.earthengine.google.com/?scriptPath=users%2Fagrosatelite_mapbiomas%2Fmapbiomas_tutorial%3Acollection7%2Firrigation%2Fpivot_dynamics%2F04_save_predict_mosaics.js)* to save Landsat mosaic to pretict 
 
-2. Run the [Colab Notebook](https://github.com/mapbiomas-brazil/irrigation/blob/mapbiomas70/pivot-dynamics/Instance_segmentation_pivot/Predict/2_Run_predict_trained_model.ipynb)
+2. Run the [Colab Notebook](https://github.com/mapbiomas-brazil/irrigation/blob/mapbiomas70/pivot-dynamics/Instance_segmentation_pivot/Predict/Run_predict_trained_model.ipynb)
 
 #### To train your own Neural Network
 To train your own model, you have to follow the steps presented in figure bellow:
@@ -32,20 +32,20 @@ To train your own model, you have to follow the steps presented in figure bellow
 
 1. To train your own model, first you have to save the train and test datasets. Follow the steps below:
     1. Run the [GEE script](https://code.earthengine.google.com/?scriptPath=users%2Fagrosatelite_mapbiomas%2Fmapbiomas_tutorial%3Acollection7%2Firrigation%2Fpivot_dynamics%2F01_export_training_samples.js) and save tree files per tile: mosaic.tif, labels.tif and mosaic.csv files. Save these files in a Google Drive folder;
-    2. Run the [Notebook Colab](https://code.earthengine.google.com/?scriptPath=users%2Fagrosatelite_mapbiomas%2Fmapbiomas_tutorial%3Acollection7%2Firrigation%2Fpivot_dynamics%2F01_export_training_samples.js)  to convert the exported GEE files to Cocofile format.
+    2. Run the [Notebook Colab](https://github.com/mapbiomas-brazil/irrigation/blob/mapbiomas70/pivot-dynamics/Instance_segmentation_pivot/Convert_Gee2Cocofile/Gee2Coco.ipynb)  to convert the exported GEE files to Cocofile format.
 
 
-2. The next step is to train de instance segmentation model, using Pythorch and Detectron2 library, running [This Colab Notebook](https://github.com/mapbiomas-brazil/irrigation/blob/mapbiomas70/pivot-dynamics/Instance_segmentation_pivot/Train_model/3_Train_model.ipynb)
+2. The next step is to train de instance segmentation model, using Pythorch and Detectron2 library, running [This Colab Notebook](https://github.com/mapbiomas-brazil/irrigation/blob/mapbiomas70/pivot-dynamics/Instance_segmentation_pivot/Train_model/Train_model.ipynb)
 
 <br>
 
 ### Instance Segmentation Post-processing
 
-To run the post-processing, follow these steps:
+To run the post-processing filters, follow these steps:
 
 1. **Erosion Filter**:
 
-    1. Open the script **irrigation/pivot_dynamics/02A_erosion_filter.js**;
+    1. Open the script **irrigation/pivot_dynamics/Instance_segmentation_pivot/1_erosion_filter.js**;
 
     2. On **line 48** (variable `years`) set a list of years you want to process;
 
@@ -57,7 +57,7 @@ To run the post-processing, follow these steps:
 
 2. **Spatial and Dilation Filter**:
 
-    1. Open the script **irrigation/pivot_dynamics/02B_spatial_and_dilation_filter.js**;
+    1. Open the script **irrigation/pivot_dynamics/Instance_segmentation_pivot/2_spatial_and_dilation_filter.js**;
 
     2. On **line 44** (variable `years`) set a list of years you want to process;
 
@@ -67,9 +67,9 @@ To run the post-processing, follow these steps:
 
     5. Run the script.
 
-3. **Tamporal and Spatial Filter**:
+3. **Temporal and Spatial Filter**:
 
-    1. Open the script **irrigation/pivot_dynamics/02C_temporal_spatial_filter.js**;
+    1. Open the script **irrigation/pivot_dynamics/Instance_segmentation_pivot/3_temporal_spatial_filter.js**;
 
     2. On **line 48** (variable `col`) set the path to the spatial and dilation filter results;
 
@@ -85,11 +85,11 @@ To run the post-processing, follow these steps:
 
 1. **Pivot Information**
 
-    1. Open the script **irrigation/pivot_dynamics/03A_pivot_information.js**;
+    1. Open the script **irrigation/pivot_dynamics/Pivot_dynamic_information/1_pivot_information.js**;
 
     2. On **line 77** (variable `years`) set a list of years you want to process;
 
-    3. On **line 81** (variable `op`) set a list of Landsat scenes (Path/Row) you want to process;
+    3. On **line 81** (variable `op`) set a list of Landsat tiles (Path/Row) you want to process;
 
     4. On **line 136** (variable `outputCollection`) set the output path for the results. On **line 139** (variable `filename`) set the individual filename prefix for your output; 
 
@@ -99,7 +99,7 @@ To run the post-processing, follow these steps:
 
 2. **Rasterize Pivots (OPTIONAL)**
 
-    1. Open the script **irrigation/pivot_dynamics/03B_rasterize_pivots.js**;
+    1. Open the script **irrigation/pivot_dynamics/Pivot_dynamic_information/2_rasterize_pivots.js**;
 
     2. On **line 27** (variable `years`) set a list of years you want to process;
 
