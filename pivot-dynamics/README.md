@@ -45,7 +45,7 @@ To run the post-processing filters, follow these steps:
 
 1. **Erosion Filter**:
 
-    1. Open the script **irrigation/pivot_dynamics/Instance_segmentation_pivot/1_erosion_filter.js**;
+    1. Open the script **irrigation/pivot_dynamics/Instance_segmentation_pivot/Post_processing/1_erosion_filter.js**;
 
     2. On **line 48** (variable `years`) set a list of years you want to process;
 
@@ -57,7 +57,7 @@ To run the post-processing filters, follow these steps:
 
 2. **Spatial and Dilation Filter**:
 
-    1. Open the script **irrigation/pivot_dynamics/Instance_segmentation_pivot/2_spatial_and_dilation_filter.js**;
+    1. Open the script **irrigation/pivot_dynamics/Instance_segmentation_pivot/Post_processing/2_spatial_and_dilation_filter.js**;
 
     2. On **line 44** (variable `years`) set a list of years you want to process;
 
@@ -69,7 +69,7 @@ To run the post-processing filters, follow these steps:
 
 3. **Temporal and Spatial Filter**:
 
-    1. Open the script **irrigation/pivot_dynamics/Instance_segmentation_pivot/3_temporal_spatial_filter.js**;
+    1. Open the script **irrigation/pivot_dynamics/Instance_segmentation_pivot/Post_processing/3_temporal_spatial_filter.js**;
 
     2. On **line 48** (variable `col`) set the path to the spatial and dilation filter results;
 
