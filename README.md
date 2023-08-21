@@ -9,10 +9,10 @@ Developed by ***Agrosatélite Geotecnologia Aplicada Ltda.***
 
 This repository contains the scripts used in the classification of the irrigation theme.
 
-We recommend that you read the [Irrigation Appendix of the Algorithm Theoretical Basis Document (ATBD)](https://mapbiomas.org/download-dos-atbds), since important informations about the classification methodology can be found in there.  For the collection 7 of MapBiomas, we have three irrigation subclasses and a new product of pivot individualization (in **beta** version):
+We recommend that you read the [Irrigation Appendix of the Algorithm Theoretical Basis Document (ATBD)](https://mapbiomas.org/download-dos-atbds), since important informations about the classification methodology can be found in there.  For the collection 8 of MapBiomas, we have three irrigation subclasses and a pivot individualization product (still in **beta** version):
 
  - Center Pivot Irrigation System
- - Irrigated rice
+ - Irrigated Rice
  - Other Irrigation System (some study areas of the Brazilian semi-arid region)
  - Pivot Dynamics (**Beta**)
 
