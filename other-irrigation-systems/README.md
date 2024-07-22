@@ -3,7 +3,7 @@
     <h1>Other irrigation systems</h1>
 </div>
 
-Developed by ***Agrosatélite Geotecnologia Aplicada***.
+Developed by ***Remap Geotecnologia Ltda***.
 
 ## About
 
@@ -17,12 +17,12 @@ First, you need to copy the scripts in this folder to your Google Earth Engine (
 
 Then, in your **GEE** account, go to the **Assets tab** and create the following directory structure:
 
- - MAPBIOMAS/C6/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS
- - MAPBIOMAS/C6/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/SAMPLES
+ - MAPBIOMAS/C9/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS
+ - MAPBIOMAS/C9/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/SAMPLES
 
 and create one **Image Collections**:
 
- - MAPBIOMAS/C6/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/**RAW**
+ - MAPBIOMAS/C9/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/**RAW**
 
 ### Classification
 

@@ -16,7 +16,7 @@ var cloudCover = 90;
 var outputAsset = 'users/your_username/MABIOMAS/C6/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/RAW';
 
 // Region of interest
-var brazilianMunicipalitiesPath = "users/agrosatelite_mapbiomas/COLECAO_5/PUBLIC/GRIDS/SEMIARID";
+var brazilianMunicipalitiesPath = "users/mapbiomas1/PUBLIC/GRIDS/SEMIARID";
 var geoCodeField = 'CD_GEOCMU';
 var irrigatedAreaDefaultField = 'at15_total';
 
@@ -31,7 +31,7 @@ var climateCollection = ee.ImageCollection("IDAHO_EPSCOR/TERRACLIMATE");
 // ****************** SAMPLES DATA ********************
 
 // set path to the previously collected samples:
-var samplesAssetDir = 'users/your_username/MAPBIOMAS/C6/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/SAMPLES';
+var samplesAssetDir = 'users/your_username/MAPBIOMAS/C9/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/SAMPLES';
 
 var fullTrainingSamples = ee.FeatureCollection([]);
 ee.data.listAssets(samplesAsset)

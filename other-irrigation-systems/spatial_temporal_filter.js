@@ -1,14 +1,14 @@
 // set the path to the raw classification result:
-var input = 'users/your_username/MAPBIOMAS/C6/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/RAW'
+var input = 'users/your_username/MAPBIOMAS/C9/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/RAW'
 
 // set the path for the filtered result
-var output = 'users/your_username/MAPBIOMAS/C6/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/SPATIAL_TEMPORAL_FILTERED'
+var output = 'users/your_username/MAPBIOMAS/C9/IRRIGATION/OTHER_IRRIGATION_SYSTEMS/RESULTS/SPATIAL_TEMPORAL_FILTERED'
 
 // set the years interval you want to filter:
 var startYear = 2012;
 var endYear = 2016;
 
-var brasilMask = ee.Image("users/agrosatelite_mapbiomas/COLECAO_5/PUBLIC/GRIDS/BIOMAS_IBGE_250K_BUFFER");
+var brasilMask = ee.Image('projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO5/country-raster');
 var class_of_reference = 1;
 var years = range(startYear, endYear - startYear + 1);
 

@@ -7,11 +7,11 @@
  *      an erosion filter. The result is used in the next filter script.
  * 
  * @author
- *      Agrosatélite
- *      mapbiomas@agrosatelite.com.br
+ *      Remap
+ *      mapbiomas@remapgeo.com
  *
  * @version
- *      MapBiomas Collection 7.0 (beta)
+ *      MapBiomas Collection 9.0 (beta)
  * 
  *  
  */
@@ -49,12 +49,12 @@ var years = [2015,2016,2017,2018,2019,2020,2021]
 
 years.forEach(function(year){
   // Set the path to an imageCollection
-  var output = 'users/your_username/MAPBIOMAS/C7/IRRIGATION/PIVOT/RESULT_MASKRCNN/EROSION_FILTER/'
+  var output = 'users/your_username/MAPBIOMAS/C9/IRRIGATION/PIVOT/RESULT_MASKRCNN/EROSION_FILTER/'
   // Set the name of each image in the collection
   var filename = 'EROSION_FILTER_IMG_' +year  
   
   // Change this collection for your uploaded RCNN result
-  var tilesCollections = ee.ImageCollection('users/youyr_username/MAPBIOMAS/C7/IRRIGATION/PIVOT/RESULT_MASKRCNN/UPLOAD/MOSAIC_'+year)
+  var tilesCollections = ee.ImageCollection('users/youyr_username/MAPBIOMAS/C9/IRRIGATION/PIVOT/RESULT_MASKRCNN/UPLOAD/MOSAIC_'+year)
        
   
   Map.addLayer(tilesCollections.max().selfMask().randomVisualizer(), {opacity: 0.5}, 'IMAGECOLLECTION RAW', false) 

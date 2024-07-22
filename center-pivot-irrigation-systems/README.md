@@ -3,7 +3,7 @@
     <h1>Center pivot irrigation systems</h1>
 </div>
 
-Developed by ***Agrosatélite Geotecnologia Aplicada Ltda.***
+Developed by ***Remap Geotecnologia Ltda.***
 
 ## About
 
@@ -17,11 +17,11 @@ First, you need to copy the scripts (javascript only) in this folder to your Goo
 
 Then, in your **GEE** account, go to the **Assets tab** and create the following directory structure:
 
- - MAPBIOMAS/C6/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS
+ - MAPBIOMAS/C9/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS
 
 and create one **Image Collections**:
 
- - MAPBIOMAS/C6/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS/**RAW**
+ - MAPBIOMAS/C9/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS/**RAW**
 
 ## Classification
 

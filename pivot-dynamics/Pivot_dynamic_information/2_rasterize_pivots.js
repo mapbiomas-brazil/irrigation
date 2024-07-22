@@ -7,11 +7,11 @@
  *      vector as a band. The export is the final product for the individualized pivots.
  * 
  * @author
- *      Agrosatélite
- *      mapbiomas@agrosatelite.com.br
+ *      Remap
+ *      mapbiomas@remapgeo.com
  *
  * @version
- *      MapBiomas Collection 7.0 (beta)
+ *      MapBiomas Collection 9.0 (beta)
  * 
  *  
  */
@@ -28,14 +28,14 @@ var year = [2015,2016,2017,2018,2019,2020,2021]
 
 
 // Set you imageCollection destination
-var output_destination = 'users/your_username/MAPBIOMAS/C7/IRRIGATION/PIVOT/RESULT_MASKRCNN/RESULTS_PIVOTS/'
+var output_destination = 'users/your_username/MAPBIOMAS/C9/IRRIGATION/PIVOT/RESULT_MASKRCNN/RESULTS_PIVOTS/'
 var output_name = 'pivot_classif'
 
 
 
 year.forEach(function(year){
   
-  var pivot = ee.FeatureCollection('users/your_username/MAPBIOMAS/C7/IRRIGATION/PIVOT/RESULT_MASKRCNN/RESULTS_VECTOR_PIVOTS/pivot_vector_classif_'+year)
+  var pivot = ee.FeatureCollection('users/your_username/MAPBIOMAS/C9/IRRIGATION/PIVOT/RESULT_MASKRCNN/RESULTS_VECTOR_PIVOTS/pivot_vector_classif_'+year)
   
   pivot = pivot.select(['id','pivot_class','n_peaks',
                                  'start_cycle_1', 'end_cycle_1',

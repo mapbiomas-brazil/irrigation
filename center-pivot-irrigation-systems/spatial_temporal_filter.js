@@ -1,10 +1,10 @@
 // Raw collection of the center pivot irrigation systems classification
 // Each image must be a binary raster with 0 (background) and 1 (pivots)
 // and contain the year property as an integer
-var input = 'users/your_username/MAPBIOMAS/C6/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS/RAW';
+var input = 'users/your_username/MAPBIOMAS/C9/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS/RAW';
 
 // export results
-var output = 'users/your_username/MAPBIOMAS/C6/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS/TEMPORAL_SPATIAL_FILTERED';
+var output = 'users/your_username/MAPBIOMAS/C9/IRRIGATION/CENTER_PIVOT_IRRIGATION_SYSTEMS/RESULTS/TEMPORAL_SPATIAL_FILTERED';
 
 // Temporal filter
 var window_size = 5;
@@ -14,7 +14,7 @@ var radiusKernel = 60;
 
 /*  END SETTINGS  */
 
-var brasilMask = ee.Image("users/agrosatelite_mapbiomas/COLECAO_5/PUBLIC/GRIDS/BIOMAS_IBGE_250K_BUFFER");
+var brasilMask = ee.Image('projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO5/country-raster');
 
 // Define spatial kernels
 

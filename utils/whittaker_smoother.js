@@ -6,11 +6,11 @@
  *      Original Authors: Kong et al. (2019) https://doi.org/10.1016/j.isprsjprs.2019.06.014
  *        https://code.earthengine.google.com/eb703c10b43a2357ab7c6987f516f322?authuser=3
  * 
- *      Modified by: Agrosatélite
- *        mapbiomas@agrosatelite.com.br
+ *      Modified by: Remap
+ *        mapbiomas@remapgeo.com
  *
  * @version
- *      MapBiomas Collection 7.0 (beta)
+ *      MapBiomas Collection 9.0 (beta)
  * 
  */
 

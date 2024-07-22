@@ -3,7 +3,7 @@
     <h1>Center Pivot Irrigation Dynamics</h1>
 </div>
 
-Developed by ***Agrosatélite Geotecnologia Aplicada***.
+Developed by ***Remap Geotecnologia Ltda***.
 
 
 ## About

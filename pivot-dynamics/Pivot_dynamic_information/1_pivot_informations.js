@@ -25,11 +25,11 @@
  *      - days_cycle_1 : days in cycle 1                                  (repeated for cycles 1 to 3)    
  *  
  * @author
- *      Agrosatélite
- *      mapbiomas@agrosatelite.com.br
+ *      Remap
+ *      mapbiomas@remapgeo.com
  *
  * @version
- *      MapBiomas Collection 7.0 (beta)
+ *      MapBiomas Collection 9.0 (beta)
  * 
  */
 
@@ -133,7 +133,7 @@ var percentiles = [50,51,52,53,54,55,56,57,58,59,60]
 
 
 // define output destination (folder)
-var outputCollection = 'users/your_username/MAPBIOMAS/C7/IRRIGATION/PIVOT/RESULT_MASKRCNN/RESULTS_VECTOR_PIVOTS/';                      
+var outputCollection = 'users/your_username/MAPBIOMAS/C9/IRRIGATION/PIVOT/RESULT_MASKRCNN/RESULTS_VECTOR_PIVOTS/';                      
 
 // set filename for export
 var filename = 'pivot_vector_classif'
@@ -234,7 +234,7 @@ years.forEach(function(year){
     
     
     // import pivot collection 
-    var pivot = ee.FeatureCollection('users/your_username/MAPBIOMAS/C7/IRRIGATION/PIVOT/RESULT_MASKRCNN/FINAL_FILTER/final_filtered_'+year)
+    var pivot = ee.FeatureCollection('users/your_username/MAPBIOMAS/C9/IRRIGATION/PIVOT/RESULT_MASKRCNN/FINAL_FILTER/final_filtered_'+year)
                     .filterBounds(roi)
                     
     

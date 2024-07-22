@@ -23,11 +23,11 @@ var geometry =
  *      10ha of area. 
  *  
  * @author
- *      Agrosatélite
- *      mapbiomas@agrosatelite.com.br
+ *      Remap
+ *      mapbiomas@remapgeo.com
  *
  * @version
- *      MapBiomas Collection 7.0 (beta)
+ *      MapBiomas Collection 9.0 (beta)
  * 
  */
 
@@ -45,13 +45,13 @@ Map.addLayer(grid, {}, 'GRID', false)
 
 
 // Set the path for the imageCollection output of the dilation filter
-var col = ee.ImageCollection('users/your_username/MAPBIOMAS/C7/IRRIGATION/PIVOT/RESULT_MASKRCNN/DILATION_FILTER/')
+var col = ee.ImageCollection('users/your_username/MAPBIOMAS/C9/IRRIGATION/PIVOT/RESULT_MASKRCNN/DILATION_FILTER/')
 
 // Set the years to filter
 var years = [2015,2016,2017,2018,2019,2020,2021]
 
 // Set output collection name
-var output = 'users/your_username/MAPBIOMAS/C7/IRRIGATION/PIVOT/RESULT_MASKRCNN/FINAL_FILTER/'
+var output = 'users/your_username/MAPBIOMAS/C9/IRRIGATION/PIVOT/RESULT_MASKRCNN/FINAL_FILTER/'
 
 // Set the filename for each image
 var filename = 'final_filtered'

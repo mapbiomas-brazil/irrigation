@@ -13,11 +13,11 @@
  *        https://stackoverflow.com/questions/66026795/how-to-apply-a-code-built-for-arrays-to-an-image-collection-after-using-toarray
  *        https://code.earthengine.google.com/e3265400b32b3ade1d4df2a7f920d8a5
  * 
- *      Modified by: Agrosatélite
- *      mapbiomas@agrosatelite.com.br
+ *      Modified by: Remap
+ *      mapbiomas@remapgeo.com
  *
  * @version
- *      MapBiomas Collection 7.0 (beta)
+ *      MapBiomas Collection 9.0 (beta)
  * 
  */
 
